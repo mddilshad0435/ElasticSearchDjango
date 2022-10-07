@@ -1,0 +1,33 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block feature %}
+<div class = "container">
+    <div class = "title">
+      <h2>All Articles</h2>
+    </div>
+    <form method="POST" id="btn">
+      <input type="text" id="query" name="query" class="textbox" placeholder="Search">
+      <button type = "submit" class="button">
+        <i class='bx bx-search'></i>
+      </button>
+    </form>
+    <div class="article-meta">
+        <a class="back-button" href="{% url 'app:home' %}">All Articles</a>
+        {% for tag in tags %}
+        <span class="tag"><a href="#">{{ tag.name }}</a></span>
+        {% endfor %}
+    </div>
+
+    <hr>
+    <div class = "featured-content">
+  
+      <div class = "featured-item">
+        <div class = "featured-img">
+            <p id="out-data"></p>
+            
+        </div>
+      </div>
+    
+    </div>
+</div>
+{% endblock feature %}
